@@ -1,1 +1,31 @@
-<p>numbers-page works!</p>
+<p-panel header="Pipes Numéricos" class="py-2">
+  <h1>Pipes Numereticos</h1>
+  <p>Pipes incluidos en Angular usualmente en el common module</p>
+</p-panel>
+
+<div class="grid mt-2">
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas Netas" subheader="del año example">
+      <!-- <p> -->
+      <!-- Primera propiedad enteros segunda minimo decimales, tercera -->
+      <!-- max.decimales totalSales | number : "1.2-3" -->
+      <!-- </p> -->
+      {{ totalSales + 1200 | number : "1.2-3" }}
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="Ventas Brutas" subheader="del año example">
+      <!-- <p> -->
+      <!-- Primera propiedad enteros segunda minimo decimales, tercera -->
+      <!-- max.decimales totalSales | currency :'USD' :'symbol-narrow' : '1.2.4-4' -->
+      <!-- </p> -->
+      {{ totalSales | currency : "USD" : "symbol-narrow" : "1.4-4" }}
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card header="Ganancia porcentual" subheader="del año example">
+      {{ percentages | percent : "1.2-2" }}
+    </p-card>
+  </div>
+</div>
