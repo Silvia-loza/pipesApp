@@ -8,8 +8,13 @@ import { Color, Hero } from '../../interfaces/hero.interface';
 })
 export class OrderComponent implements OnInit {
   public isUpperCase: boolean = false;
+  public sortBy: keyof Hero | '' = '';
   public heros: Hero[] = [
-    { name: 'superman', canfly: true, color: Color.blue },
+    {
+      name: 'wolverine',
+      canfly: true,
+      color: Color.red,
+    },
     {
       name: 'batman',
       canfly: false,
@@ -20,10 +25,21 @@ export class OrderComponent implements OnInit {
       canfly: true,
       color: Color.red,
     },
+    { name: 'superman', canfly: true, color: Color.blue },
     {
       name: 'spiderman',
       canfly: false,
       color: Color.green,
+    },
+    {
+      name: 'flash',
+      canfly: false,
+      color: Color.blue,
+    },
+    {
+      name: 'hulk',
+      canfly: true,
+      color: Color.red,
     },
   ];
 
@@ -34,5 +50,16 @@ export class OrderComponent implements OnInit {
 
   toggleCase(): void {
     this.isUpperCase = !this.isUpperCase;
+  }
+  sortByName(): void {
+    this.sortBy = 'name';
+  }
+
+  sortByCanFly(): void {
+    this.sortBy = 'canfly';
+  }
+
+  sortByColor() {
+    this.sortBy = 'color';
   }
 }
